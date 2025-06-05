@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  jupyter-pytorch:
+    image: quay.io/jupyter/pytorch-notebook:latest
+    container_name: jupyter-pytorch-dev
+    ports:
+      - "8888:8888"
+    volumes:
+      - "C:/Users/JSEAH/HybridRecommender/notebooks:/home/jovyan/work"
+      - "C:/Users/JSEAH/HybridRecommender/data:/home/jovyan/data"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+      - NB_UID=1000
+      - NB_GID=1000
+    command: >
+      bash -c "
+        pip install streamlit pandas numpy plotly openai streamlit-jupyter &&
+        start-notebook.sh --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*'
+      "
+    restart: unless-stopped
+
+volumes:
+  notebooks:
+  data:

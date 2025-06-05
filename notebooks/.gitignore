@@ -1,0 +1,4 @@
+movie_recommender_model/
+movielens_data/
+__pycache__/
+.ipynb_checkpoints/
