@@ -9,7 +9,8 @@ A demo to demonstrate the idea how to use Gen AI to augment the Deep CF recommen
 ### Stremalit setup
 1. i use conda to setup streamlit setup. I provided a environment.yml. You can run below to install:
      conda env create -f environment.yml
+2. Please run to set your Open AI API Key -->  conda env config vars set OPEN_AI_KEY="<your key>"
 
-2. after that you can navigate to Notebooks folder and run
+3. after that you can navigate to Notebooks folder and run
    streamlit run RecommenderUI.py
 
